@@ -13,9 +13,15 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />    <!-- main entry point for your app -->
+                <category android:name="android.intent.category.LAUNCHER" />    <!-- should appear as a top-level item in the launcher -->
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />    <!-- Any Intent with view actions. -->
+                <category android:name="android.intent.category.DEFAULT" /> <!-- Any implicit Intent. This category must be included for your Activity to receive any implicit Intent. -->
+                <category android:name="android.intent.category.BROWSABLE" />   <!-- Requests for browsable links from web pages, email, or other sources. -->
+                <data android:scheme="http" android:host="developer.android.com" /> <!-- URIs that contain a scheme of http and a host name of developer.android.com. -->
+                <!-- If you'd prefer your receiver to be able to accept any links, you can leave out the <data> element. -->
             </intent-filter>
         </activity>
     </application>
